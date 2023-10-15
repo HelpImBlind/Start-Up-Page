@@ -53,7 +53,7 @@ html, body {
 /****************************************************************/
 
 .background-img {
-    background-image: url(/start-up-page/dr-doom.jpg);
+    background-image: url(./start-up-page/dr-doom.jpg);
     background-size: cover;
     position: absolute;
     top: 0;
@@ -173,7 +173,7 @@ ul li {
     height: 285px;
     border-radius: 10px;
     overflow-y: scroll;
-    background-image: url(/start-up-page/dr-doom-comic-art.jpeg);
+    background-image: url(./start-up-page/dr-doom-comic-art.jpeg);
     background-size: cover;
     z-index: -1;
     animation-name: menuSlide;
