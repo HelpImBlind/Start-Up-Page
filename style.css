@@ -53,7 +53,7 @@ html, body {
 /****************************************************************/
 
 .background-img {
-    background-image: url(/start-up-date/dr-doom.jpg);
+    background-image: url(dr-doom.jpg);
     background-size: cover;
     position: absolute;
     top: 0;
