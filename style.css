@@ -98,12 +98,13 @@ html, body {
     padding: 10px;
 }
 
-#date {
+#currentDateTime {
     font-family: var(--main-font);
-    color: white;
+    color: var(--main-font-clr);
     font-size: var(--main-font-size);
+    font-weight: 700;
     background-color: rgba(0, 0, 0, 0.75);
-    padding: 0px 10px;
+    padding: 10px 10px;
     border-radius: 20px;
 }
 
@@ -132,6 +133,7 @@ ul li {
 }
 
 .main-menu-heading {
+    width: 100%;
     align-items: center;
     color: var(--main-font-clr);
     font-family: var(--main-font);
@@ -141,24 +143,16 @@ ul li {
     cursor: default;
 }
 
-.main-menu-heading div:nth-of-type(1) {
-    width: 80%;
-}
-
-.main-menu-heading div:nth-of-type(2) {
-    width: 20%;
-}
-
-.main-menu-arrow {
-    padding-right: 20px;
-    width: 20%;
-}
-
-.main-menu-arrow img {
-    width: 50%;
-    float: right;
-    opacity: 0;
-}
+.main-menu-heading:hover {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 10px;
+    color: white;
+    background-image: url(../start-up-page/dr-doom-btn-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}    
 
 .hide-sub-menu {
     display: none;
@@ -209,13 +203,23 @@ ul li {
 
 .show-menu:hover .hide-sub-menu {
     display: block; 
-    transition: 2s ease;
 }
 
 .show-menu:hover .main-menu-arrow img {
     opacity: 0.7;
     transition: 0.35s ease;
     transform: scale(1.8);
+}
+
+.show-menu:hover .main-menu-heading {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 10px;
+    color: white;
+    background-image: url(../start-up-page/dr-doom-btn-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* width */
@@ -277,3 +281,8 @@ ul li {
         padding: 20px 0px 20px 30px;
     }
 }
+
+
+
+
+
