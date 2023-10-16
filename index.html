@@ -6,7 +6,6 @@
     <title>Adrian Adams | Home</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="doom-tab-icon-wb.png">
-    
 </head>
 <body>
     <div class="background-img"></div>
@@ -14,40 +13,75 @@
         <div class="main-nav dis-flex">
             <div class="nav-quick-links dis-flex">
                 <a href="https://workbook.99c.co.za/" target="_blank">
-                    <img src="/start-up-page/Workbook.png" alt="Workbook">
+                    <img src="Workbook.png" alt="Workbook">
                 </a>
                 <a href="https://author.prod.shopritelabs.co.za/libs/granite/core/content/login.html?resource=%2F&$$login$$=%24%24login%24%24&j_reason=unknown&j_reason_code=unknown" target="_blank">
-                    <img src="/start-up-page/AEM.png" alt="AEM">
+                    <img src="AEM.png" alt="AEM">
                 </a>
                 <a href="https://web.whatsapp.com/" target="_blank">
-                    <img src="/start-up-page/whatsapp.png" alt="Whatsapp">
+                    <img src="whatsapp.png" alt="Whatsapp">
                 </a>
                 <a href="https://www.youtube.com/" target="_blank">
-                    <img src="/start-up-page/youtube.png" alt="YouTube">
+                    <img src="youtube.png" alt="YouTube">
                 </a>
                 <a href="https://open.spotify.com/?flow_ctx=87223b24-5b92-4039-a055-41d208b2164a%3A1697223564" target="_blank">
-                    <img src="/start-up-page/spotify.png" alt="spotify">
+                    <img src="spotify.png" alt="spotify">
                 </a>
                 <a href="https://docs.google.com/spreadsheets/u/1/?pli=1" target="_blank">
-                    <img src="/start-up-page/sheets.png" alt="Google Sheets">
+                    <img src="sheets.png" alt="Google Sheets">
                 </a>
             </div>
-            <p id="date"></p>
-            <script src="index.js"></script>
+            
+            <p id="currentDateTime"></p>
+            <script>
+                function updateDateTime() {
+                    // Get the current date and time
+                    var currentDateTime = new Date();
+        
+                    // Define an array of abbreviated month names
+                    var monthNames = [
+                        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                        "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+                    ];
+        
+                    // Get the day, month, and year
+                    var day = currentDateTime.getDate();
+                    var monthIndex = currentDateTime.getMonth(); // Month is zero-based
+                    var year = currentDateTime.getFullYear();
+        
+                    // Get the hours, minutes, and seconds
+                    var hours = currentDateTime.getHours();
+                    var minutes = currentDateTime.getMinutes();
+                    var seconds = currentDateTime.getSeconds();
+
+                    // Add leading zeros to minutes if less than 10
+                    minutes = (minutes < 10) ? "0" + minutes : minutes;
+        
+                    // Display the date and time on the page
+                    var dateTimeElement = document.getElementById("currentDateTime");
+                    dateTimeElement.textContent = day + " " + monthNames[monthIndex]  + " " + year + ", " + hours + ":" + minutes
+                }
+        
+                // Update the time every second (1000 milliseconds)
+                setInterval(updateDateTime, 1000);
+        
+                // Initial call to display the time immediately
+                updateDateTime();
+            </script>
+
+            <!--Old Dates & Time-->
+            <!--<p id="date"></p>
+            <script src="index.js"></script>-->
             <!--<script>
                 document.getElementById("date").innerHTML = Date().slice(0, 21);
             </script>-->
+
         </div>
         <div class="primary-list">
             <ul class="dis-flex">
                 <li class="dis-flex show-menu">
-                    <div class="main-menu-heading dis-flex-row">
-                        <div>
-                            <p>Work Sites</p>
-                        </div>
-                        <div class="main-menu-arrow">
-                            <img src="/start-up-page/right-arrow.png" alt="Arrow">
-                        </div>
+                    <div class="main-menu-heading dis-flex">
+                        <p>Work Sites</p>
                     </div>
                     <div class="hide-sub-menu">
                         <div class="sub-menu">
@@ -62,18 +96,12 @@
                             <a href="https://okfd.everlytic.net/" target="_blank">Everlytic</a>
                             <a href="https://platform.sharethis.com/login" target="_blank">Share This</a>
                             <a href="https://99ccomm.sharepoint.com/" target="_blank">Intranet</a>
-
                         </div>
                     </div>
                 </li>
                 <li class="dis-flex show-menu">
-                    <div class="main-menu-heading dis-flex-row">
-                        <div>
-                            <p>Code</p>
-                        </div>
-                        <div class="main-menu-arrow">
-                            <img src="/start-up-page/right-arrow.png" alt="Arrow">
-                        </div>
+                    <div class="main-menu-heading dis-flex">
+                        <p>Code</p>
                     </div>
                     <div class="hide-sub-menu">
                         <div class="sub-menu">
@@ -86,13 +114,8 @@
                     </div>
                 </li>    
                 <li class="dis-flex show-menu">
-                    <div class="main-menu-heading dis-flex-row">
-                        <div>
-                            <p>AI Tools</p>
-                        </div>
-                        <div class="main-menu-arrow">
-                            <img src="/start-up-page/right-arrow.png" alt="Arrow">
-                        </div>
+                    <div class="main-menu-heading dis-flex">
+                       <p>AI Tools</p> 
                     </div>
                     <div class="hide-sub-menu">
                         <div class="sub-menu">
@@ -102,13 +125,8 @@
                     </div>    
                 </li>
                 <li class="dis-flex show-menu">
-                    <div class="main-menu-heading dis-flex-row">
-                        <div>
-                            <p>Online Tools</p>
-                        </div>
-                        <div class="main-menu-arrow">
-                            <img src="/start-up-page/right-arrow.png" alt="Arrow">
-                        </div>
+                    <div class="main-menu-heading dis-flex">
+                        <p>Online Tools</p>
                     </div>
                     <div class="hide-sub-menu">
                         <div class="sub-menu"> 
@@ -120,6 +138,8 @@
                             <a href="https://www.convertcsv.com/json-to-csv.htm" target="_blank">JSON Converter</a>
                             <a href="https://www.flaticon.com/" target="_blank">Flaticon</a>
                             <a href="https://aws.amazon.com/training/skills-centers/cape-town-skills-center/" target="_blank">AWS Skills</a>
+                            <a href="https://fmoviesz.to/home" target="_blank">FMovies</a>
+                            <a href="https://anix.to/home" target="_blank">Anix</a>
                         </div>
                     </div>    
                 </li>
