@@ -125,7 +125,7 @@
                     </div>    
                 </li>
                 <li class="dis-flex show-menu">
-                    <div class="main-menu-heading dis-flex">
+                    <div class="main-menu-heading dis-flex seprater-ten">
                         <p>Online Tools</p>
                     </div>
                     <div class="hide-sub-menu">
@@ -144,6 +144,120 @@
                     </div>    
                 </li>
             </ul>
+            <div>
+                <h2 class="notes-section-heading"><i>Notes Section</i></h2>
+            </div>
+            <div class="notes-section seprater-ten">
+            <ul class="notes-list">
+                <li><!--Note 1-->
+                    <div class="note-content" contenteditable="true">
+                        <input type="checkbox" class="note-checkbox">
+                    </div>
+                </li>
+                <li><!--Note 2-->
+                    <div class="note-content" contenteditable="true">
+                        <input type="checkbox" class="note-checkbox">
+                    </div>
+                </li>
+                <li><!--Note 3-->
+                    <div class="note-content" contenteditable="true">
+                         <input type="checkbox" class="note-checkbox">
+                    </div>
+                </li>
+                <li><!--Note 4-->
+                    <div class="note-content" contenteditable="true">
+                        <input type="checkbox" class="note-checkbox">
+                    </div>
+                </li>
+                <li><!--Note 5-->
+                    <div class="note-content" contenteditable="true">
+                        <input type="checkbox" class="note-checkbox">
+                    </div>
+                </li>
+                <li><!--Note 6-->
+                    <div class="note-content" contenteditable="true">
+                        <input type="checkbox" class="note-checkbox">
+                    </div>
+                </li>
+                <li><!--Note 7-->
+                    <div class="note-content" contenteditable="true">
+                        <input type="checkbox" class="note-checkbox">
+                    </div>
+                </li>
+                <li><!--Note 8-->
+                    <div class="note-content" contenteditable="true">
+                        <input type="checkbox" class="note-checkbox">
+                    </div>
+                </li>
+                <li><!--Note 9-->
+                    <div class="note-content" contenteditable="true">
+                        <input type="checkbox" class="note-checkbox">
+                    </div>
+                </li>
+                <li><!--Note 10-->
+                    <div class="note-content" contenteditable="true">
+                        <input type="checkbox" class="note-checkbox">
+                    </div>
+                </li>
+                <!-- Add more list items for additional notes -->
+            </ul>
+            </div>
+            <script>
+                document.querySelector('.notes-list').addEventListener('click', function(event) {
+                const target = event.target;
+
+                if (target.classList.contains('note-content')) {
+                    // Handle font color change (using a color input with class 'color-input')
+                    document.querySelector('.color-input').addEventListener('input', function() {
+                        target.style.color = this.value;
+                    });
+
+                    // Handle bold, underline, and italic buttons
+                    document.querySelector('.bold-button').addEventListener('click', function() {
+                        target.style.fontWeight = target.style.fontWeight === 'bold' ? 'normal' : 'bold';
+                    });
+
+                    document.querySelector('.underline-button').addEventListener('click', function() {
+                        target.style.textDecoration = target.style.textDecoration === 'underline' ? 'none' : 'underline';
+                    });
+
+                    document.querySelector('.italic-button').addEventListener('click', function() {
+                        target.style.fontStyle = target.style.fontStyle === 'italic' ? 'normal' : 'italic';
+                    });
+
+                        // Handle hyperlink button
+                            document.querySelector('.hyperlink-button').addEventListener('click', function() {
+                                const url = prompt('Enter URL:');
+                                if (url) {
+                                    const selectedText = window.getSelection().toString();
+                                    if (selectedText) {
+                                        const link = document.createElement('a');
+                                        link.href = url;
+                                        link.textContent = selectedText;
+                                        const range = window.getSelection().getRangeAt(0);
+                                        range.deleteContents();
+                                        range.insertNode(link);
+                                    }
+                                }
+                            });
+                        }
+                    });
+
+                    
+                    // Check if there are existing notes in localStorage
+                    const savedNotes = localStorage.getItem('notes');
+
+                    if (savedNotes) {
+                        // If there are existing notes, populate the notes section with them
+                        document.querySelector('.notes-list').innerHTML = savedNotes;
+                    }
+
+                    // Add an event listener to the notes section
+                    document.querySelector('.notes-list').addEventListener('input', function() {
+                        // When the user types in the notes section, save the updated content to localStorage
+                        localStorage.setItem('notes', this.innerHTML);
+                    });
+            </script>
         </div>
     </div>
 </body>
