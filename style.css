@@ -239,6 +239,39 @@ ul li {
     border: 1px solid white;
   }
 
+/************************* Notes section *************************/
+
+.notes-section {
+    position: relative;
+    height: 200px;
+    width: 95%;
+    overflow-y: scroll;
+}
+
+.notes-section-heading {
+    font-family: var(--main-font);
+    color: var(--main-font-clr);
+}
+
+.notes-list {
+    padding: 10px;
+}
+
+.notes-list li {
+    color: white;
+    font-family: var(--main-font);
+    
+}
+
+.note-content {
+    border-bottom: 0.5px solid white;
+    padding-bottom: 5px;
+}
+
+.note-checkbox {
+    margin-right: 10px;
+}
+
 /************************* Screen Responsiveness *************************/
 
 @media screen and (min-width: 1290px) {
@@ -254,4 +287,9 @@ ul li {
         width: 20%;
         padding: 20px 0px 20px 30px;
     }
+
+    .notes-section {
+        height: 450px;
+    }
+    
 }
